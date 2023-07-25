@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>ISS Tracker - Welcome!</title>
+    <link rel="shortcut icon" href="img/issIcon.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <!-- Terminator -->
+    <script src=" https://unpkg.com/@joergdietrich/leaflet.terminator@1.0.0/L.Terminator.js"></script>
+</head>
+
+<body onload="javascript:init()">
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Marca/Logo -->
+        <a class="navbar-brand" href="index.html"><img src="img/brandLogo.png"><label id="lblNavbarBrand">ISS
+                TRACKER</label></a>
+        <div class="container-fluid justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container h-100 bg-dark">
+        <div id="message"></div>
+        <div id="worldMap"></div>
+        <div id="dataPanel">
+            <table class="table table-sm table-striped bg-white table-hover">
+                <tr>
+                    <th>
+                        <h5><kbd><label class="lblPanel" id="lblLatitude">LATITUDE</label></kbd></h5>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <h6>
+                            <p id="parLatitude"></p>
+                        </h6>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <h5><kbd><label class="lblPanel" id="lblLongitude">LONGITUDE</label></kbd></h5>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <h6>
+                            <p id="parLongitude"></p>
+                        </h6>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <h5><kbd><label class="lblPanel" id="lblAltitude">ALTITUDE</label></kbd></h5>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <h6>
+                            <p id="parAltitude"></p>
+                        </h6>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <h5><kbd><label class="lblPanel" id="lblVelocity">VELOCITY</label></kbd></h5>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <h6>
+                            <p id="parVelocity"></p>
+                        </h6>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <h5><kbd><label class="lblPanel" id="lblVisibility">VISIBILITY</label></kbd></h5>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <img id="imgVisibility">
+                        <h6>
+                            <p id="parVisibility"></p>
+                        </h6>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <span class="badge bg-success">
+                <input id="chkGps" class="options" type="checkbox" onclick="javascript:gpsControl()" disabled="true"> GPS
+            </span>
+            <span class="badge bg-success">
+                <input id="chkFootprint" class="options" type="checkbox" onclick="javascript:issFootprintControl()" disabled="true"> FOOTPRINT
+            </span>
+            <span class="badge bg-success">
+                <input id="chkLockOn" class="options" type="checkbox" onclick="javascript:issLockOnControl()" disabled="true"> LOCK ON
+            </span>
+            <span class="badge bg-success">
+                <input id="chkCalcOrbit" class="options" type="checkbox" onclick="javascript:calcOrbitPath()" checked disabled="true"> ORBIT
+            </span>
+        </div>
+    </div>
+    <script src="js/traker.js"></script>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+
+</html>
